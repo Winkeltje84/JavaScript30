@@ -2,16 +2,21 @@
 
 <html>
   <head>
-
+    <title>Drum Project</title>
   </head>
 
   <body>
 
+
+    <audio data-key="67" src="sounds/cat.mp3"></audio>
+
+    <script>
+      window.addEventListener('keydown', function(event) {
+        console.log(event.keyCode)
+        const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+        audio.play()
+      })
+    </script>
   </body>
 
-  <script>
-    window.addEventListener('keydown', function(event) {
-      console.log(event)
-    })
-  </script>
 </html>
