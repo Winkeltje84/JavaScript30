@@ -20,9 +20,10 @@
 
     <script>
       window.addEventListener('keydown', function(event) {
-        console.log(event.keyCode)
         const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
-        if(!audio) return // when pressing a data-key without associated sound: will stop function from running
+        if(!audio) return console.log("key has no sound")// when pressing a data-key without associated sound: will stop function from running
+        console.log(event.keyCode)
+        audio.currentTime = 0 // rewind to the start so button can be pressed immediatly again and not just after waiting for earlier sound to finish
         audio.play()
       })
     </script>
