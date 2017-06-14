@@ -58,13 +58,27 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
     <script>
+
+
       window.addEventListener('keydown', function(event) {
         const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`)
+        const key = document.querySelector(`.key[data-key="${event.keyCode}"]`)
         if(!audio) return console.log("key has no sound")// when pressing a data-key without associated sound: will stop function from running
         console.log(event.keyCode)
+        // console.log(key)
         audio.currentTime = 0 // rewind to the start so button can be pressed immediatly again and not just after waiting for earlier sound to finish
         audio.play()
+        key.classList.add('playing')
       })
+
+      function removeTransition(event) {
+        if(event.propertyName !== 'transform') return /* we only need to react on one of the transitions (in this case we continue for only the 'transform' that happens ones per onClick) */
+        // console.log(event.propertyName)
+        this.classList.remove('playing') /* playing is taking of the class="key playing" and it will transition again to class="key"*/
+      }
+
+      const keys = document.querySelectorAll('.key') /* all divs with 'key' class are selected and added to const 'keys' */
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition)) /* listens for each event when a key is hit (and a number of things change: 4 border-colors, 1 box-shadow & 1 'transform'=size) AND WHEN THE TRANSITION HAS ENDED (="transidtionend") THE removeTransition FUNCTION IS CALLED*/
     </script>
   </body>
 
