@@ -30,4 +30,6 @@ html {
   opacity: 0.4;
   position: absolute;
   top:50%;
+  transform-origin: right;
+  transform: rotate(90deg);
 }
