@@ -11,11 +11,24 @@
   <body>
 
   <div class="clock">
-    <div class="clock-face img-responsive">
+    <div class="clock-face">
       <div class="hand hour-hand"></div>
       <div class="hand min-hand"></div>
       <div class="hand second-hand"></div>
     </div>
   </div>
+
+  <script>
+    function setDate() {
+      // console.log("hi")
+      const now = new Date();
+      const seconds = now.getSeconds();
+      console.log(seconds);
+    }
+
+    setInterval(setDate, 1000);
+
+  </script>
+
   </body>
 </html>
