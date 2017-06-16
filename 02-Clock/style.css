@@ -1,0 +1,17 @@
+.clock {
+  width: 500px;
+  height: 500px;
+  background-image: url("images/clock_background.jpg");
+  background-position: center;
+  background-size: 100%;
+  border-color: #000;
+  border-style: solid;
+  border-radius: 50%;
+  position: relative;
+}
+
+.clock-face {
+
+
+
+}
