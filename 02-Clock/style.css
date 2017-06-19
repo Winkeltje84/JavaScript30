@@ -68,3 +68,19 @@ body {
   width: 94px;
   margin-left: 56px;
 }
+
+.digital {
+  font-family: 'Anton', sans-serif;
+}
+
+.hour-digital {
+  display: inline-block;
+}
+
+.min-digital {
+  display: inline-block;
+}
+
+.second-digital {
+  display: inline-block;
+}

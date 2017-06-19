@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <title>ClockWork</title>
   </head>
@@ -16,6 +17,17 @@
       <div class="hand hour-hand"></div>
       <div class="hand min-hand"></div>
       <div class="hand second-hand"></div>
+    </div>
+    <div class="digital">
+      <div class="hour-digital">
+        <h1>12</h1>
+      </div>
+      <div class="min-digital">
+        <h1>00</h1>
+      </div>
+      <div class="second-digital">
+        <h1>00</h1>
+      </div>
     </div>
   </div>
 
@@ -44,6 +56,10 @@
         seconds + " seconds = " + secondsDegrees + " degrees" + "\n" +
         minutes + " minutes = " + minutesDegrees + " degrees" + "\n" +
         hours + " hours = " + hoursDegrees + " degrees");
+
+      const hourDigital = document.querySelector('.hour-digital').innerHTML = `<h1>${hours}</h1>`;
+      const minuteDigital = document.querySelector('.min-digital').innerHTML = `<h1>${minutes}</h1>`;
+      const secondDigital = document.querySelector('.second-digital').innerHTML = `<h1>${seconds}</h1>`
     }
 
     setInterval(setDate, 1000);
