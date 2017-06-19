@@ -1,0 +1,25 @@
+body {
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #282C34;
+  text-align: center;
+}
+
+h1 {
+  color: #FFC809;
+}
+
+label {
+  color: #F96567;
+}
+
+li {
+  display: inline-block;
+}
+
+img {
+  width: 80%;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
