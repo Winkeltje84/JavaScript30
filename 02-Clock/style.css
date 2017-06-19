@@ -3,6 +3,15 @@ html {
   text-align: center;
 }
 
+body {
+  margin: 0;
+  /*font-size: 2rem;*/
+  /*display:flex;*/
+  /*flex:1;*/
+  /*min-height: 100vh;*/
+  /*align-items: center;*/
+}
+
 .clock {
   width: 300px;
   height: 300px;
@@ -12,8 +21,15 @@ html {
   border-color: #000;
   border-style: solid;
   border-radius: 50%;
-  position: relative;
+  /*position: relative;*/
   padding: 10px;
+  /*display: flex;
+  align-items: center;*/
+
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  align-items: center;
 }
 
 .clock-face {
@@ -30,6 +46,8 @@ html {
   opacity: 0.4;
   position: absolute;
   top:50%;
-  transform-origin: right;
-  transform: rotate(90deg);
+  transform-origin: right; /* so the rotation goes along the right side of the hand */
+  transform: rotate(90deg); /* to start the clock at 12:00 */
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.18, 4.19, 0.58, 1); /* shows a special animation for the hands to move */
 }
