@@ -1,0 +1,86 @@
+html {
+  background: url("images/background.jpg") no-repeat center center fixed;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  /*font-size: 2rem;*/
+  /*display:flex;*/
+  /*flex:1;*/
+  /*min-height: 100vh;*/
+  /*align-items: center;*/
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-image: url("images/clock.jpg");
+  background-position: center;
+  background-size: 100%;
+  border-color: #000;
+  border-style: solid;
+  border-radius: 50%;
+  /*position: relative;*/
+  /*padding: 10px;*/
+  /*display: flex;
+  align-items: center;*/
+
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  align-items: center;
+}
+
+.clock-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px); /* account for the height of the clock hands */
+}
+
+.hand {
+  background-color: #000;
+  opacity: 0.4;
+  position: absolute;
+  top:50%;
+  transform-origin: right; /* so the rotation goes along the right side of the hand */
+  transform: rotate(90deg); /* to start the clock at 12:00 */
+  transition: all 0.05s;
+  transition-timing-function: cubic-bezier(0.18, 4.19, 0.58, 1); /* shows a special animation for the hands to move */
+}
+
+.second-hand {
+  height: 4px;
+  width: 129px;
+  margin-left: 22px;
+}
+
+.min-hand {
+  height: 6px;
+  width: 111px;
+  margin-left: 39px;
+  /*left: -30px;*/
+}
+
+.hour-hand {
+  height: 8px;
+  width: 94px;
+  margin-left: 56px;
+}
+
+.digital {
+  font-family: 'Anton', sans-serif;
+}
+
+.hour-digital {
+  display: inline-block;
+}
+
+.min-digital {
+  display: inline-block;
+}
+
+.second-digital {
+  display: inline-block;
+}
