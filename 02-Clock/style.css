@@ -22,7 +22,7 @@ body {
   border-style: solid;
   border-radius: 50%;
   /*position: relative;*/
-  padding: 10px;
+  /*padding: 10px;*/
   /*display: flex;
   align-items: center;*/
 
@@ -40,8 +40,6 @@ body {
 }
 
 .hand {
-  width: 50%;
-  height: 6px;
   background-color: #000;
   opacity: 0.4;
   position: absolute;
@@ -50,4 +48,23 @@ body {
   transform: rotate(90deg); /* to start the clock at 12:00 */
   transition: all 0.05s;
   transition-timing-function: cubic-bezier(0.18, 4.19, 0.58, 1); /* shows a special animation for the hands to move */
+}
+
+.second-hand {
+  height: 4px;
+  width: 129px;
+  margin-left: 22px;
+}
+
+.min-hand {
+  height: 6px;
+  width: 111px;
+  margin-left: 39px;
+  /*left: -30px;*/
+}
+
+.hour-hand {
+  height: 8px;
+  width: 94px;
+  margin-left: 56px;
 }
