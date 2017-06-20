@@ -2,12 +2,12 @@
   --base: #F48024;
   --blur: 3px;
   --spacing: 10px;
-  --siteBackground: #282C34;
+  --backbase: #282C34;
 }
 
 body {
   font-family: 'Patrick Hand SC', cursive;
-  background-color: var(--siteBackground);
+  background-color: var(--backbase);
   text-align: center;
 }
 
