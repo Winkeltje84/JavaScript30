@@ -1,8 +1,9 @@
 :root { /* initiation initial values with :root --> declaring on the highest level */
   --base: #F48024;
-  --blur: 3px;
-  --spacing: 10px;
+  --blur: 0px;
+  --spacing: 2px;
   --backbase: #282C34;
+  --radius: 0%;
 }
 
 body {
@@ -28,6 +29,7 @@ img {
   background: var(--base);
   padding: var(--spacing);
   filter:blur(var(--blur));
+  border-radius: var(--radius);
 }
 
 .js-text {

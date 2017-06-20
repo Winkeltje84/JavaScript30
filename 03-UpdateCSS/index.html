@@ -11,18 +11,21 @@
 
     <div class="controls">
       <label for="spacing">Spacing:</label>
-      <input type="range" name="spacing" min="0" max="200" value="10" data-sizing="px">
+      <input type="range" name="spacing" min="0" max="200" value="0" data-sizing="px">
          <!-- data-sizing to be used for adding to output when change is made
           you can use any combination of "data-...", like data-name, data-cool
           and you can later call it on the object with this.dataset
           -->
       <label for="blur">Blur:</label>>
-      <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+      <input type="range" name="blur" min="0" max="25" value="0" data-sizing="px">
 
       <label for="base">Base Color:</label>
       <input type="color" name="base" value="#4CAF50">
       <label for="site-background">Background:</label>
       <input type="color" name="backbase" value="#282C34" >
+      <label for="radius">Radius:</label>
+      <input type="range" name="radius" min="0" max="50" value="0" data-sizing="%">
+
     </div>
 
     <img src="images/amsterdam.jpg" alt="Amsterdam should show...">
