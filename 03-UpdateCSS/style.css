@@ -1,0 +1,38 @@
+:root { /* initiation initial values with :root --> declaring on the highest level */
+  --base: #F48024;
+  --blur: 3px;
+  --spacing: 10px;
+}
+
+body {
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #282C34;
+  text-align: center;
+}
+
+h1 {
+  color: #FFC809;
+}
+
+label {
+  color: #F96567;
+}
+
+li {
+  display: inline-block;
+}
+
+img {
+  width: 80%;
+  background: var(--base);
+  padding: var(--spacing);
+  filter:blur(var(--blur));
+}
+
+.js-text {
+  color: var(--base);
+}
+
+.controls {
+  margin-bottom: 20px;
+}
