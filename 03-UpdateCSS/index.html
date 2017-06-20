@@ -12,7 +12,10 @@
     <div class="controls">
       <label for="spacing">Spacing:</label>
       <input type="range" name="spacing" min="0" max="200" value="10" data-sizing="px">
-
+         <!-- data-sizing to be used for adding to output when change is made
+          you can use any combination of "data-...", like data-name, data-cool
+          and you can later call it on the object with this.dataset
+          -->
       <label for="blur">Blur:</label>>
       <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
 
@@ -21,6 +24,23 @@
     </div>
 
     <img src="images/amsterdam.jpg" alt="Amsterdam should show...">
+
+
+    <script>
+      const inputs = document.querySelectorAll('.controls input');
+
+      function handleUpdate() {
+        const suffix = this.dataset.sizing || "";
+        // sizing of 'px' which we declared in the input object || nothing because the color doesn't need px
+        console.log(this.name)
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      }
+
+      inputs.forEach(input => input.addEventListener('change', handleUpdate));
+      inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+    </script>
+
   </body>
 
 </html>
