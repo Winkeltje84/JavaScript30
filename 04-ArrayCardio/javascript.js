@@ -39,9 +39,9 @@ console.table(oldest_to_youngest)
 
 console.log("// Array.prototype.reduce()")
 console.log("4. How many years did all the inventors live?")
-const how_long_lives_total = inventors.reduce(function(prev, curr) { // it takes the previous value (initially zero) and the current
-  return prev + (curr.passed - curr.year)
-}, 0) // FIRST TIME is set to ZERO
+const how_long_lives_total = inventors.reduce(function(total, curr) { // it takes the previous (total) value (initially zero) and the current
+  return total + (curr.passed - curr.year)
+}, 0) // total FIRST TIME is set to ZERO
 console.log(how_long_lives_total)
 
 const how_long_each = inventors.reduce(function(object, inventor) {
@@ -50,14 +50,22 @@ const how_long_each = inventors.reduce(function(object, inventor) {
 }, {})
 console.table(how_long_each)
 
-// 5. Sort the inventors by years lived
-const sort_by_long_lives = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+console.log("5. Sort the inventors by years lived")
+const sort_by_long_lives = inventors.sort((a, b) => {
+  const lastGuy = a.passed - a.year;
+  const nextGuy = b.passed - b.year;
+  return lastGuy > nextGuy ? 1 : -1;
+})
   //sorting from old to young
-
 console.table(sort_by_long_lives)
+console.log("below is ordered by years lived")
+sort_by_long_lives.forEach(each => console.log(`${each.first} ${each.last}: ${each.passed - each.year} years`))
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
+
 // 7. sort Exercise
 // Sort the people alphabetically by last name
 // 8. Reduce Exercise
