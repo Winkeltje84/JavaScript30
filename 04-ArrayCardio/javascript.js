@@ -18,8 +18,9 @@ console.log("// Array.prototype.filter()")
 console.log("1. Filter the list of inventors for those who were born in the 1500's")
 const eighteen_hundred_seventy_nine = inventors.filter(inventor => inventor.year == 1879)
 console.log(`${eighteen_hundred_seventy_nine[0].first} ${eighteen_hundred_seventy_nine[0].last} born in ${eighteen_hundred_seventy_nine[0].year} and died in ${eighteen_hundred_seventy_nine[0].passed}`)
+
 const fifteen_hundreds = inventors.filter(inventor => inventor.year >= 1500 && inventor.year <1600)
-console.log(fifteen_hundreds)
+console.table(fifteen_hundreds)
 fifteen_hundreds.forEach(inventor => console.log("1500's: " + inventor.first + " " + inventor.last))
 
 console.log("// Array.prototype.map()")
@@ -34,27 +35,26 @@ console.log(first_and_last_name)
 console.log("Array.prototype.sort()")
 console.log("// 3. Sort the inventors by birthdate, oldest to youngest")
 const oldest_to_youngest = inventors.sort(function(a, b) {return a.year - b.year})
-console.log(oldest_to_youngest)
+console.table(oldest_to_youngest)
 
 console.log("// Array.prototype.reduce()")
 console.log("4. How many years did all the inventors live?")
-const how_long_lives = inventors.reduce(function(prev, curr) { // it takes the previous value (initially zero) and the current
+const how_long_lives_total = inventors.reduce(function(prev, curr) { // it takes the previous value (initially zero) and the current
   return prev + (curr.passed - curr.year)
 }, 0) // FIRST TIME is set to ZERO
-console.log(how_long_lives)
+console.log(how_long_lives_total)
 
 const how_long_each = inventors.reduce(function(object, inventor) {
   object[name = `${inventor.first} ${inventor.last}`] = (inventor.passed - inventor.year);
   return object
 }, {})
-console.log(how_long_each)
+console.table(how_long_each)
 
 // 5. Sort the inventors by years lived
-const sort_by_long_lives = inventors.sort(function(a, b) {
+const sort_by_long_lives = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
   //sorting from old to young
-  return ((b.passed - b.year) - (a.passed - a.year))
-})
-console.log(sort_by_long_lives)
+
+console.table(sort_by_long_lives)
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
