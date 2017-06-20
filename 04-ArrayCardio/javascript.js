@@ -63,8 +63,17 @@ sort_by_long_lives.forEach(each => console.log(`${each.first} ${each.last}: ${ea
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
-
+// USE BELOW CODE IN THE DEV-TOOLS ON THE WIKIPEDIA WEBSITE:
+console.log("BELOW CODE CAN ONLY BEEN PERFORMED IN CONSOLE DEV-TOOLS ON WIKIPEDIA SITE, SEE COMMENTS")
+const category = document.querySelector('.mw-category')
+// ABOVE finds the DOM element with class "mw-category which hass all links including names"
+const links = [...category.querySelectorAll('a')] //using the ES6 SPREAD OPERATOR to change NodeList into Array on which we can use .map()
+// ABOVE finds all 'a' elements within the category constant found earlier
+links[0].textContent
+// ABOVE finds the textContent of the first 'a'
+const de = links
+            .map(link => link.textContent)
+            .filter(streetName => streetName.includes('de'));
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
