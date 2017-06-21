@@ -92,4 +92,12 @@ console.log(alphabetically);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+const data = ['car', 'car', 'truck', 'motorbike', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+const transportation = data.reduce((obj, item) => {
+  // console.log(item)
+  if (!obj[item])
+    obj[item] = 0;  // if the empty object doesn't have this item yet: create it with initial value of zero
+  obj[item]++  // add one to this item
+  return obj
+}, {})
+console.log(transportation)
