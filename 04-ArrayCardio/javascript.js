@@ -12,7 +12,6 @@ const inventors = [
   { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
   { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
 ];
-const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
 
 console.log("// Array.prototype.filter()")
 console.log("1. Filter the list of inventors for those who were born in the 1500's")
@@ -63,20 +62,34 @@ sort_by_long_lives.forEach(each => console.log(`${each.first} ${each.last}: ${ea
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-// USE BELOW CODE IN THE DEV-TOOLS ON THE WIKIPEDIA WEBSITE:
-console.log("BELOW CODE CAN ONLY BEEN PERFORMED IN CONSOLE DEV-TOOLS ON WIKIPEDIA SITE, SEE COMMENTS")
-const category = document.querySelector('.mw-category')
-// ABOVE finds the DOM element with class "mw-category which hass all links including names"
-const links = [...category.querySelectorAll('a')] //using the ES6 SPREAD OPERATOR to change NodeList into Array on which we can use .map()
-// ABOVE finds all 'a' elements within the category constant found earlier
-links[0].textContent
-// ABOVE finds the textContent of the first 'a'
-const de = links
-            .map(link => link.textContent)
-            .filter(streetName => streetName.includes('de'));
+    // USE BELOW CODE IN THE DEV-TOOLS ON THE WIKIPEDIA WEBSITE:
+// console.log("BELOW CODE CAN ONLY BEEN PERFORMED IN CONSOLE DEV-TOOLS ON WIKIPEDIA SITE, SEE COMMENTS")
+// const category = document.querySelector('.mw-category')
+    // ABOVE finds the DOM element with class "mw-category which hass all links including names"
+// const links = [...category.querySelectorAll('a')]
+    //using the ES6 SPREAD OPERATOR to change NodeList into Array on which we can use .map()
+    // ABOVE finds all 'a' elements within the category constant found earlier
+// links[0].textContent
+    // ABOVE finds the textContent of the first 'a'
+// const de = links
+//             .map(link => link.textContent)
+//             .filter(streetName => streetName.includes('de'));
+// console.log(de)
+
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+
+const alphabetically = people.sort(function(prev, next) {
+
+  const [prev_last, prev_first] = prev.split(', ') //splits each string into two parts which are assigned to two constants
+  const [next_last, next_first] = next.split(', ')
+  // console.log(prev_last, prev_first, " & ", next_last, next_first);
+  return prev_last < next_last ? -1 : 1;
+})
+console.log(alphabetically);
+
 // 8. Reduce Exercise
 // Sum up the instances of each of these
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
